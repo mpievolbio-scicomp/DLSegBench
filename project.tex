@@ -1,0 +1,74 @@
+%        File: project.tex
+%     Created: Mon Aug 30 10:00 AM 2021 C
+% Last Change: Mon Aug 30 10:00 AM 2021 C
+%
+\documentclass[a4paper]{article}
+\usepackage[style=nature]{biblatex}
+\addbibresource{jabref.db.bib}
+
+\begin{document}
+
+\section{Master thesis project: Deep Learning for Image Segmentation\label{dlsegbench}}
+
+Benchmarking deep learning based cell segmentation
+
+\subsection{Project description}\label{project-description}
+
+Image segmentation is a cornerstone of quantitative image analysis in
+biomedical applications. Recently, deep learning \cite{Aggarwal2018} has become the de-facto
+standard backbone technology \cite{Valen2016}. 
+
+Deep learning based image segmentation is implemented in numerous open
+source and commercial software packages. A non-exhaustive list is given below.
+In the context of microbial
+population biology, which is our research field, most available
+implementations are trained on Escherichia coli or Bacillus subtilis
+data. For our model organism, Pseudomonas fluorescens strain SBW25,
+neither training datasets, nor pre-trained models are available.
+Therefore, we face the problem of having to filter and compare the available implementations and
+identify the implementation or combination of implementations that work best for our datasets. 
+
+The following is a list of image segmentation codes that we wish to
+compare:
+
+\begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \item
+        SuperSegger \cite{Stylianidou2016}
+    \item
+        Orbit \cite{Stritt2020}
+    \item
+        CellProfiler \cite{Jones2008}
+    \item
+        QuPath \cite{Bankhead2017}
+\end{enumerate}
+
+Some of these implementations come with pre-trained models for E. coli or Bac. subtilis data and provide means to
+transfer or re-train these models on other data. Other implementations support manual annotation (labeling) of a subset of data and training the neural network from scratch.
+
+The project can be divided into the following steps:
+\begin{enumerate}
+    \item Curate a model training dataset using recently
+          obtained fluorescens microscopy timeseries taken from growing microbial cell cultures.
+    \item Split the dataset into
+        \begin{itemize}
+            \item a \emph{training} dataset for iterative neural network training with the backpropagation
+                algorithm 
+            \item a \emph{validation} dataset to monitor the training
+            \item a \emph{test} dataset to assess the model performance and accuracy.
+        \end{itemize}
+    \item Manual labeling the test dataset
+    \item Identification of performance metric(s).
+    \item Execution of training-validation-testing for all candidate implementations and optional hyperparameter tuning.
+    \item Analysis of training, validation, and test results
+    \item Identification of the best model parameters and deep learning image segmentation implementation
+    \item Documentation and publication of the study. 
+\end{enumerate}
+
+\subsection{Outlook}
+Having curated the best segmentation implementation and model parameters for Pseudomonas fluorescens SBW25 data, we can
+then use the model to fine tune parameters for cell tracking and morphotyping algorithms, e.g. in SchnitzCell \cite{Young2012}. 
+
+\printbibliography
+
+\end{document}
