@@ -8,26 +8,32 @@
 
 \begin{document}
 
-\section{Master thesis project: Deep Learning for Image Segmentation\label{dlsegbench}}
+\section{Master thesis project: Deep Learning for Biological Image Segmentation\label{dlsegbench}}
 
-Benchmarking deep learning based cell segmentation
+\begin{description}
+    \item[Hosting institution] Max Planck Institute for Evolutionary Biology, Dept. Microbial Population Biology (Prof.
+        Paul Rainey)
+    \item[Advisor] Dr. Carsten Fortmann-Grote
+\end{description}
 
-\subsection{Project description}\label{project-description}
+
+\subsection{Background}\label{project-description}
 
 Image segmentation is a cornerstone of quantitative image analysis in
 biomedical applications. Recently, deep learning \cite{Aggarwal2018} has become the de-facto
 standard backbone technology \cite{Valen2016}. 
 
 Deep learning based image segmentation is implemented in numerous open
-source and commercial software packages. A non-exhaustive list is given below.
+source and commercial software packages. A non--exhaustive list is given below.
 In the context of microbial
 population biology, which is our research field, most available
-implementations are trained on Escherichia coli or Bacillus subtilis
-data. For our model organism, Pseudomonas fluorescens strain SBW25,
+implementations are trained on \textit{Escherichia coli} or \textit{Bacillus subtilis}
+data. For our model organism, \textit{Pseudomonas fluorescens} strain SBW25,
 neither training datasets, nor pre-trained models are available.
 Therefore, we face the problem of having to filter and compare the available implementations and
 identify the implementation or combination of implementations that work best for our datasets. 
 
+\subsection{Image segmentation codes}
 The following is a list of image segmentation codes that we wish to
 compare:
 
@@ -43,12 +49,19 @@ compare:
         QuPath \cite{Bankhead2017}
 \end{enumerate}
 
-Some of these implementations come with pre-trained models for E. coli or Bac. subtilis data and provide means to
+Some of these implementations come with pre-trained models for \textit{E. coli} or \textit{Bac. subtilis} data and provide means to
 transfer or re-train these models on other data. Other implementations support manual annotation (labeling) of a subset of data and training the neural network from scratch.
+
+\subsection{Image data}
+Image data for \textit{P. fluorescens} under various growth conditions and using various microscopy techniques is readily
+available in the department. More images can be provided if needed. Some data preparation,
+such as shaping, normalization and centralization may be needed but is usually part of the implementation.
+
+\subsection{Project outline}
 
 The project can be divided into the following steps:
 \begin{enumerate}
-    \item Curate a model training dataset using recently
+    \item Curate a model training dataset from recently
           obtained fluorescens microscopy timeseries taken from growing microbial cell cultures.
     \item Split the dataset into
         \begin{itemize}
@@ -59,14 +72,15 @@ The project can be divided into the following steps:
         \end{itemize}
     \item Manual labeling the test dataset
     \item Identification of performance metric(s).
-    \item Execution of training-validation-testing for all candidate implementations and optional hyperparameter tuning.
+    \item Execution of training-validation-testing for the implementations listed above 
+        and optional hyperparameter tuning.
     \item Analysis of training, validation, and test results
     \item Identification of the best model parameters and deep learning image segmentation implementation
     \item Documentation and publication of the study. 
 \end{enumerate}
 
 \subsection{Outlook}
-Having curated the best segmentation implementation and model parameters for Pseudomonas fluorescens SBW25 data, we can
+Having curated the best segmentation implementation and model parameters for \textit{Pseudomonas fluorescens} SBW25 data, we can
 then use the model to fine tune parameters for cell tracking and morphotyping algorithms, e.g. in SchnitzCell \cite{Young2012}. 
 
 \printbibliography
