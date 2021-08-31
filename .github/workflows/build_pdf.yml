@@ -10,3 +10,9 @@ jobs:
         uses: dante-ev/latex-action@latest
         with:
           root_file: project.tex
+      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Upload
+          path: project.pdf
+
